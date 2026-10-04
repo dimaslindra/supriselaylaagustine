@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff4f93" />
+  <title>Untuk Kamu, Layla 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="preloader" class="preloader">
+    <div class="loader-heart">❤</div>
+    <p>Menyiapkan kejutan kecil untukmu...</p>
+  </div>
+
+  <canvas id="confettiCanvas"></canvas>
+  <div id="floatingHearts" class="floating-hearts" aria-hidden="true"></div>
+
+  <button id="musicBtn" class="music-btn" aria-label="Putar atau hentikan musik">
+    <span class="music-icon">♫</span>
+    <span class="music-label">Musik</span>
+  </button>
+  <audio id="bgMusic" loop>
+    <source src="assets/musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <main>
+    <section id="hero" class="hero section">
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+
+      <div class="hero-card glass">
+        <span class="eyebrow">A LITTLE SURPRISE FOR YOU</span>
+        <h1>
+          Untuk <span id="partnerName">Kamu</span>,
+          <br><span class="script">orang terbaik.</span>
+        </h1>
+        <p class="hero-text">
+          Ada sesuatu yang kecil, manis, dan penuh cerita yang ingin aku kasih ke kamu.
+          Jangan buru-buru ya... nikmati satu per satu hahah. 💕
+        </p>
+
+        <div class="scroll-hint">
+          <span>Geser ke bawah</span>
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="giftSection" class="gift-section section">
+      <div class="section-heading">
+        <span class="mini-title">KHUSUS UNTUKMU</span>
+        <h2>Ada sebuah kado kecil...</h2>
+        <p>Klik kadonya kalau kamu sudah siap ✨</p>
+      </div>
+
+      <div class="gift-stage">
+        <div id="giftBox" class="gift-box" role="button" tabindex="0" aria-label="Buka hadiah">
+          <div class="gift-lid">
+            <div class="lid-top"></div>
+            <div class="ribbon-vertical lid-ribbon"></div>
+            <div class="bow">
+              <span class="bow-left"></span>
+              <span class="bow-center"></span>
+              <span class="bow-right"></span>
+            </div>
+          </div>
+          <div class="gift-body">
+            <div class="ribbon-vertical"></div>
+            <div class="ribbon-horizontal"></div>
+            <span class="gift-heart">♥</span>
+          </div>
+          <div class="gift-shadow"></div>
+        </div>
+        <button id="openGiftBtn" class="primary-btn">Buka Kadonya 💝</button>
+      </div>
+    </section>
+
+    <section id="surpriseSection" class="surprise-section section hidden-section">
+      <div class="reveal-card glass">
+        <div class="sparkle-badge">✦ SURPRISE! ✦</div>
+        <h2 class="script big-script">Ini semua tentang kamu.</h2>
+        <p>
+          Terima kasih sudah hadir dan membuat hari-hari biasa terasa sedikit lebih menyenangkan. Mungkin kita belum
+          tahu cerita ini akan berjalan sejauh apa, tapi sejauh ini aku senang bisa mengenal kamu lebih dekat. Aku
+          mungkin tidak selalu pandai merangkai kata, tapi satu hal yang pasti: aku bersyukur bisa dipertemukan dan
+          mengenal kamu huhuhuhu.
+        </p>
+
+        <div class="love-counter">
+          <div class="counter-box">
+            <span class="counter-number" id="daysTogether">∞</span>
+            <span class="counter-label">Hari spesial</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-number">100%</span>
+            <span class="counter-label">Rasa senang</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-number">1</span>
+            <span class="counter-label">Orang favorit</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading memories-heading">
+        <span class="mini-title">MOMENTS</span>
+        <h2>Beberapa momen kecil yang mungkin kamu suka</h2>
+        <p>Klik fotonya untuk melihat lebih dekat.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <button class="memory-card tall" data-type="image" data-src="assets/foto1.png">
+          <img src="assets/foto1.png" alt="Kenangan 1" onerror="this.src='assets/placeholder1.svg'">
+          <span class="memory-overlay"><b>A simple moment</b><small>momen sederhana yang mungkin kamu
+              suka</small></span>
+        </button>
+
+        <button class="memory-card" data-type="image" data-src="assets/foto2.png">
+          <img src="assets/foto2.png" alt="Kenangan 2" onerror="this.src='assets/placeholder2.svg'">
+          <span class="memory-overlay"><b>Favorite Day</b><small>salah satu hari favorit mu</small></span>
+        </button>
+
+        <button class="memory-card" data-type="video" data-src="assets/cover-video.mp4">
+          <div class="video-thumb">
+            <img src="assets/cover-video.mp4" alt="Video kenangan" onerror="this.src='assets/placeholder3.svg'">
+            <span class="play-button">▶</span>
+          </div>
+          <span class="memory-overlay"><b>Play Our Memory</b><small>tekan untuk memutar video</small></span>
+        </button>
+
+        <button class="memory-card wide" data-type="image" data-src="assets/foto3.jpeg">
+          <img src="assets/foto3.jpeg" alt="Kenangan 3" onerror="this.src='assets/placeholder4.svg'">
+          <span class="memory-overlay"><b>Still My Favorite</b><small>dan akan selalu begitu</small></span>
+        </button>
+      </div>
+
+      <div class="letter-card glass">
+        <div class="envelope-icon">💌</div>
+        <span class="mini-title">A LETTER FOR YOU</span>
+        <h2>Kalau suatu hari kamu lupa...</h2>
+        <p>
+          Aku ingin kamu ingat bahwa ada seseorang yang selalu senang mendengar ceritamu,
+          ikut bahagia saat kamu bahagia, dan tetap ingin menggenggam tanganmu ketika hari sedang tidak baik
+          hahahahahah.
+        </p>
+        <p>
+          Terima kasih. Semoga kita masih punya banyak
+          halaman kosong untuk diisi dengan cerita-cerita berikutnya.
+        </p>
+        <p class="signature">From me, for you, <span id="yourName">Layla Agustine</span> ♡</p>
+      </div>
+
+      <div class="final-card">
+        <p class="final-small">Satu pertanyaan terakhir...</p>
+        <h2>Mau terus bikin cerita indah bareng aku? 🥺💗</h2>
+        <div class="answer-actions">
+          <button id="yesBtn" class="primary-btn big-btn">Mauuu! 💖</button>
+          <button id="noBtn" class="secondary-btn">Nggak 😜</button>
+        </div>
+        <p id="finalMessage" class="final-message"></p>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <button id="closeModal" class="modal-close" aria-label="Tutup">×</button>
+    <div id="modalContent" class="modal-content"></div>
+  </div>
+
+  <div id="toast" class="toast">Kadonya dibuka! 💕</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
